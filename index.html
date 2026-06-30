@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Instintos Sexshop – Tu placer, tu privacidad</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link href="https://fonts." rel="stylesheet"/>
+  <link rel="stylesheet" href="CSS/style.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link">Inicio</a></li>
+      <li class="dropdown">
+        <a href="#jugueteria" class="nav-link">Juguetería ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#jugueteria">Ver todos</a></li>
+          <li><a href="#jugueteria">Vibradores</a></li>
+          <li><a href="#jugueteria">Kits y Sets</a></li>
+          <li><a href="#jugueteria">Accesorios</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#cosmetologia" class="nav-link">Cosmetología ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#cosmetologia">Ver todos</a></li>
+          <li><a href="#cosmetologia">Lubricantes</a></li>
+          <li><a href="#cosmetologia">Cremas</a></li>
+          <li><a href="#cosmetologia">Estimulantes</a></li>
+        </ul>
+      </li>
+      <li><a href="#footer" class="nav-link">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="searchBtn" title="Buscar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="btn-icon" id="cartBtn" title="Carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <button class="btn-icon" id="loginBtn" title="Mi cuenta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <div class="search-inner">
+      <input type="text" placeholder="Buscar productos..." id="searchInput"/>
+      <button class="btn-search" onclick="doSearch()">Buscar</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-logo-bg">
+    <img src="IMG/fondo.png" alt="Logo fondo"/>
+  </div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">✦ Bienvenido a tu espacio privado ✦</p>
+    <h1 class="hero-title">Tu placer,<br/><span class="red">tu secreto.</span></h1>
+    <p class="hero-slogan">privacidad, confianza y placer al alcance de un clic. Descubre productos de calidad con envíos discretos y una experiencia de compra cómoda y segura tambien el coll to action Compra ahora y disfruta con total privacidad</p>
+    <div class="hero-actions">
+      <a href="#jugueteria" class="btn-glass">Juguetería</a>
+      <a href="#cosmetologia" class="btn-outline-hero">Cosmetología</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Desliza</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features-bar">
+  <div class="feature"><span class="f-icon">🔒</span><span>100% Discreto</span></div>
+  <div class="feature"><span class="f-icon">🚚</span><span>Envío Seguro</span></div>
+  <div class="feature"><span class="f-icon">💳</span><span>Pago Seguro</span></div>
+  <div class="feature"><span class="f-icon">📦</span><span>Empaque Neutro</span></div>
+</div>
+
+<!-- JUGUETERÍA -->
+<section class="products-section" id="jugueteria">
+  <div class="section-header">
+    <span class="section-eyebrow">Categoría</span>
+    <h2 class="section-title">Juguetería</h2>
+    <p class="section-sub">Explora nuestra colección de productos para el placer íntimo</p>
+  </div>
+  <div class="products-grid" id="jugueteriaGrid"></div>
+</section>
+
+<!-- COSMETOLOGÍA -->
+<section class="products-section alt" id="cosmetologia">
+  <div class="section-header">
+    <span class="section-eyebrow">Categoría</span>
+    <h2 class="section-title">Cosmetología</h2>
+    <p class="section-sub">Productos de bienestar y belleza íntima de alta calidad</p>
+  </div>
+  <div class="products-grid" id="cosmetologiaGrid"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <p>Tu espacio de bienestar íntimo, seguro y discreto. Compra desde la comodidad de tu hogar.</p>
+      <div class="social-links">
+        <a href="#" class="social-btn" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" class="social-btn" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-btn" title="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.77 0 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.34 6.33 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.27 8.27 0 0 0 4.83 1.55V6.85a4.85 4.85 0 0 1-1.06-.16z"/></svg>
+        </a>
+        <a href="#" class="social-btn" title="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#jugueteria">Juguetería</a></li>
+        <li><a href="#cosmetologia">Cosmetología</a></li>
+        <li><a href="#" onclick="openModal('loginModal')">Mi Cuenta</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Soporte</h4>
+      <ul>
+        <li><a href="#" onclick="openModal('helpModal')">Ayuda y Soporte</a></li>
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="#">Devoluciones</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="mailto:instintos@email.com">instintos@email.com</a></li>
+        <li><a href="#">Bogotá, Colombia</a></li>      
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Instintos Sexshop. Todos los derechos reservados. +18</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP BURBUJA -->
+<a href="https://wa.me/573000000000" target="_blank" class="whatsapp-bubble" title="Escríbenos">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  <span class="wa-tooltip">¿Necesitas ayuda?</span>
+</a>
+
+<!-- MODAL CARRITO -->
+<div class="modal-overlay" id="cartModal">
+  <div class="modal cart-modal">
+    <div class="modal-header">
+      <h3>🛒 Mi Carrito</h3>
+      <button class="modal-close" onclick="closeModal('cartModal')">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">Tu carrito está vacío</div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total"><span>Total:</span><strong id="cartTotal">$0</strong></div>
+      <button class="btn-red btn-full" id="checkoutBtn" onclick="closeModal('cartModal');openModal('payModal');goStep(1)">Proceder al Pago →</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PAGO -->
+<div class="modal-overlay" id="payModal">
+  <div class="modal pay-modal">
+    <div class="modal-header">
+      <h3>💳 Pasarela de Pago</h3>
+      <button class="modal-close" onclick="closeModal('payModal')">✕</button>
+    </div>
+    <div class="pay-body">
+      <div class="pay-step active" id="step1">
+        <h4 class="step-title"><span class="step-num">1</span> Lugar de Entrega</h4>
+        <div class="order-status-box">
+          <div class="status-steps">
+            <div class="status-step done">✓ Carrito</div>
+            <div class="status-step active">→ Envío</div>
+            <div class="status-step">Pago</div>
+            <div class="status-step">Confirmado</div>
+          </div>
+        </div>
+        <div class="form-group"><label>Nombre completo</label><input type="text" placeholder="Tu nombre completo"/></div>
+        <div class="form-group"><label>Ciudad</label><input type="text" placeholder="Bogotá, Medellín..."/></div>
+        <div class="form-group"><label>Dirección</label><input type="text" placeholder="Calle 123 # 45-67 Apto 8"/></div>
+        <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+57 300 000 0000"/></div>
+        <div class="form-group"><label>Indicaciones (opcional)</label><input type="text" placeholder="Torre A, apto 401..."/></div>
+        <button class="btn-red btn-full" onclick="goStep(2)">Continuar al Pago →</button>
+      </div>
+
+      <div class="pay-step" id="step2">
+        <h4 class="step-title"><span class="step-num">2</span> Método de Pago</h4>
+        <div class="order-status-box">
+          <div class="status-steps">
+            <div class="status-step done">✓ Carrito</div>
+            <div class="status-step done">✓ Envío</div>
+            <div class="status-step active">→ Pago</div>
+            <div class="status-step">Confirmado</div>
+          </div>
+        </div>
+        <div class="pay-methods">
+          <label class="pay-method"><input type="radio" name="payMethod" value="card" checked onchange="toggleCardForm(this)"/><span class="pm-icon">💳</span><span>Tarjeta Débito / Crédito</span></label>
+          <label class="pay-method"><input type="radio" name="payMethod" value="nequi" onchange="toggleCardForm(this)"/><span class="pm-icon">📱</span><span>Nequi</span></label>
+          <label class="pay-method"><input type="radio" name="payMethod" value="pse" onchange="toggleCardForm(this)"/><span class="pm-icon">🏦</span><span>PSE – Transferencia</span></label>
+          <label class="pay-method"><input type="radio" name="payMethod" value="efectivo" onchange="toggleCardForm(this)"/><span class="pm-icon">💵</span><span>Contraentrega</span></label>
+        </div>
+        <div class="card-form" id="cardForm">
+          <div class="form-group"><label>Número de tarjeta</label><input type="text" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCard(this)"/></div>
+          <div class="form-row">
+            <div class="form-group"><label>Vencimiento</label><input type="text" placeholder="MM/AA" maxlength="5"/></div>
+            <div class="form-group"><label>CVV</label><input type="text" placeholder="123" maxlength="4"/></div>
+          </div>
+          <div class="form-group"><label>Nombre en tarjeta</label><input type="text" placeholder="Como aparece en tu tarjeta"/></div>
+        </div>
+        <div class="pay-summary">
+          <div class="summary-row"><span>Subtotal</span><span id="summarySubtotal">$0</span></div>
+          <div class="summary-row"><span>Envío</span><span>$8.000</span></div>
+          <div class="summary-row total"><span>Total</span><strong id="summaryTotal">$8.000</strong></div>
+        </div>
+        <div class="form-row">
+          <button class="btn-outline-modal btn-full" onclick="goStep(1)">← Volver</button>
+          <button class="btn-red btn-full" onclick="goStep(3)">Confirmar Pago →</button>
+        </div>
+      </div>
+
+      <div class="pay-step" id="step3">
+        <div class="confirm-box">
+          <div class="confirm-icon">✅</div>
+          <h4>¡Pedido Confirmado!</h4>
+          <p>Tu pedido fue recibido y está siendo procesado. Recibirás un correo con el seguimiento.</p>
+          <div class="order-status-box">
+            <div class="status-steps">
+              <div class="status-step done">✓ Carrito</div>
+              <div class="status-step done">✓ Envío</div>
+              <div class="status-step done">✓ Pago</div>
+              <div class="status-step active">→ En proceso</div>
+            </div>
+          </div>
+          <button class="btn-red" onclick="closeModal('payModal');resetCart()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL LOGIN -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal login-modal">
+    <div class="modal-header">
+      <h3 id="loginTitle">👤 Iniciar Sesión</h3>
+      <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+    </div>
+    <div id="loginBody">
+      <div class="login-view" id="view-login">
+        <div class="form-group"><label>Correo electrónico</label><input type="email" placeholder="tu@correo.com" id="loginEmail"/></div>
+        <div class="form-group"><label>Contraseña</label><input type="password" placeholder="••••••••" id="loginPass"/></div>
+        <button class="btn-red btn-full" onclick="doLogin()">Iniciar Sesión</button>
+        <div class="login-links">
+          <a href="#" onclick="showView('view-recover')">¿Olvidaste tu contraseña?</a>
+          <a href="#" onclick="showView('view-register')">Crear cuenta nueva</a>
+        </div>
+      </div>
+
+      <div class="login-view hidden" id="view-register">
+        <div class="form-group"><label>Nombre completo</label><input type="text" placeholder="Tu nombre"/></div>
+        <div class="form-group"><label>Correo electrónico</label><input type="email" placeholder="tu@correo.com"/></div>
+        <div class="form-group"><label>Contraseña</label><input type="password" placeholder="Mínimo 8 caracteres"/></div>
+        <div class="form-group"><label>Confirmar contraseña</label><input type="password" placeholder="Repite tu contraseña"/></div>
+        <button class="btn-red btn-full" onclick="showView('view-login')">Crear Cuenta</button>
+        <div class="login-links"><a href="#" onclick="showView('view-login')">← Volver al inicio de sesión</a></div>
+      </div>
+
+      <div class="login-view hidden" id="view-recover">
+        <p class="view-desc">Ingresa tu correo y te enviaremos un enlace para restablecer tu contraseña.</p>
+        <div class="form-group"><label>Correo electrónico</label><input type="email" placeholder="tu@correo.com"/></div>
+        <button class="btn-red btn-full">Enviar Enlace</button>
+        <div class="login-links"><a href="#" onclick="showView('view-login')">← Volver</a></div>
+      </div>
+
+      <div class="login-view hidden" id="view-account">
+        <div class="account-welcome" id="accountWelcome"></div>
+        <div class="account-menu">
+          <button class="account-item" onclick="showView('view-change-email')"><span>✉️</span> Cambiar Correo</button>
+          <button class="account-item" onclick="showView('view-change-pass')"><span>🔑</span> Cambiar Contraseña</button>
+          <button class="account-item" onclick="closeModal('loginModal');openModal('helpModal')"><span>❓</span> Ayuda y Soporte</button>
+          <button class="account-item" onclick="closeModal('loginModal');openModal('payModal');goStep(1)"><span>📦</span> Estado de Pedido</button>
+          <button class="account-item danger" onclick="doLogout()"><span>🚪</span> Cerrar Sesión</button>
+        </div>
+      </div>
+
+      <div class="login-view hidden" id="view-change-email">
+        <div class="form-group"><label>Correo actual</label><input type="email" placeholder="correo@actual.com"/></div>
+        <div class="form-group"><label>Nuevo correo</label><input type="email" placeholder="nuevo@correo.com"/></div>
+        <div class="form-group"><label>Contraseña</label><input type="password" placeholder="••••••••"/></div>
+        <button class="btn-red btn-full">Actualizar Correo</button>
+        <div class="login-links"><a href="#" onclick="showView('view-account')">← Volver a mi cuenta</a></div>
+      </div>
+
+      <div class="login-view hidden" id="view-change-pass">
+        <div class="form-group"><label>Contraseña actual</label><input type="password" placeholder="••••••••"/></div>
+        <div class="form-group"><label>Nueva contraseña</label><input type="password" placeholder="Mínimo 8 caracteres"/></div>
+        <div class="form-group"><label>Confirmar nueva contraseña</label><input type="password" placeholder="Repite la contraseña"/></div>
+        <button class="btn-red btn-full">Cambiar Contraseña</button>
+        <div class="login-links"><a href="#" onclick="showView('view-account')">← Volver a mi cuenta</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL AYUDA -->
+<div class="modal-overlay" id="helpModal">
+  <div class="modal help-modal">
+    <div class="modal-header">
+      <h3>❓ Ayuda y Soporte Técnico</h3>
+      <button class="modal-close" onclick="closeModal('helpModal')">✕</button>
+    </div>
+    <div class="help-body">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cómo hago un pedido?</button><div class="faq-a">Navega por el catálogo, agrega productos al carrito y sigue el proceso de pago. Es rápido y 100% seguro.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿El empaque es discreto?</button><div class="faq-a">Sí, todos los pedidos se envían en empaque neutro sin ningún logo ni indicación del contenido.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto demora el envío?</button><div class="faq-a">Bogotá: 1-2 días hábiles. Otras ciudades: 3-5 días hábiles.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cómo rastreo mi pedido?</button><div class="faq-a">Al confirmar el pago recibirás un código de seguimiento por correo electrónico.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Puedo devolver un producto?</button><div class="faq-a">Sí, tienes 7 días hábiles para reportar inconvenientes. Escríbenos por WhatsApp o correo.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Mis datos están seguros?</button><div class="faq-a">Usamos cifrado SSL y nunca compartimos tu información con terceros.</div></div>
+      <div class="help-contact"><p>¿No encontraste lo que buscabas?</p><a href="mailto:instintos@email.com" class="btn-red">Escríbenos al correo</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DETALLE PRODUCTO -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal product-modal">
+    <div class="modal-header">
+      <h3 id="pModalTitle">Producto</h3>
+      <button class="modal-close" onclick="closeModal('productModal')">✕</button>
+    </div>
+    <div class="product-modal-body">
+      <div class="pmodal-img-wrap"><img src="" alt="" id="pModalImg"/></div>
+      <div class="pmodal-info">
+        <p class="pmodal-cat" id="pModalCat"></p>
+        <p class="pmodal-desc" id="pModalDesc"></p>
+        <p class="pmodal-price" id="pModalPrice"></p>
+        <div class="qty-selector">
+          <button onclick="changeQty(-1)">−</button>
+          <span id="pModalQty">1</span>
+          <button onclick="changeQty(1)">+</button>
+        </div>
+        <button class="btn-red btn-full" id="pModalAddBtn">Agregar al Carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="JS/app.js"></script>
+</body>
+</html>
